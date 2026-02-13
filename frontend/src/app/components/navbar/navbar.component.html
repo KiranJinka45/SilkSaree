@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="navbar">
+    <div class="navbar-brand">
+        <span class="brand-text">Silk Saree Shop</span>
+    </div>
+    
+    <div class="navbar-search">
+        <mat-form-field class="search-field" appearance="outline">
+            <mat-icon matPrefix class="search-icon">search</mat-icon>
+            <input 
+                matInput 
+                placeholder="Search sarees..." 
+                [(ngModel)]="searchQuery"
+                (keyup.enter)="onSearch()"
+                (input)="onSearchInput()"
+                class="search-input">
+            <button 
+                mat-icon-button 
+                matSuffix 
+                *ngIf="searchQuery" 
+                (click)="clearSearch()"
+                class="clear-button">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <span class="spacer"></span>
+
+    <div class="navbar-actions">
+        <ng-container *ngIf="!authService.isLoggedIn()">
+            <button mat-button class="login-btn" routerLink="/login">
+                <mat-icon>login</mat-icon>
+                <span class="btn-text">Login</span>
+            </button>
+            <button mat-raised-button class="signup-btn" routerLink="/login">
+                <mat-icon>person_add</mat-icon>
+                <span class="btn-text">Sign Up</span>
+            </button>
+        </ng-container>
+        <button 
+            mat-button 
+            class="logout-btn" 
+            *ngIf="authService.isLoggedIn()" 
+            (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span class="btn-text">Logout</span>
+        </button>
+    </div>
+</mat-toolbar>

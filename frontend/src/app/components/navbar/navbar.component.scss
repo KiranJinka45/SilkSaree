@@ -1,0 +1,209 @@
+.navbar {
+    background: var(--primary-color);
+    color: var(--accent-color);
+    font-family: var(--header-font);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 16px;
+    min-height: 64px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    
+    .brand-text {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        white-space: nowrap;
+    }
+}
+
+.navbar-search {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 16px;
+    
+    .search-field {
+        width: 100%;
+        
+        ::ng-deep .mat-form-field-wrapper {
+            padding-bottom: 0;
+            margin: 0;
+        }
+        
+        ::ng-deep .mat-form-field-infix {
+            padding: 8px 0;
+            border-top: 0;
+        }
+        
+        ::ng-deep .mat-form-field-outline {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: background-color 0.3s ease;
+        }
+        
+        ::ng-deep .mat-form-field-outline-thick {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        &:hover ::ng-deep .mat-form-field-outline {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        &.mat-focused ::ng-deep .mat-form-field-outline {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+    
+    .search-input {
+        color: #fff;
+        font-size: 14px;
+        
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+    
+    .search-icon {
+        color: rgba(255, 255, 255, 0.7);
+        margin-right: 8px;
+    }
+    
+    .clear-button {
+        color: rgba(255, 255, 255, 0.7);
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    
+    button {
+        font-family: var(--body-font);
+        font-weight: 500;
+        border-radius: 24px;
+        padding: 0 20px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        
+        mat-icon {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
+    .login-btn {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+    }
+    
+    .signup-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        
+        &:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+            transform: translateY(-2px);
+        }
+    }
+    
+    .logout-btn {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        
+        &:hover {
+            background-color: rgba(255, 87, 87, 0.2);
+            border-color: #ff5757;
+            color: #ff5757;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 960px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 8px 16px;
+    }
+    
+    .navbar-brand {
+        .brand-text {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .navbar-search {
+        order: 3;
+        flex-basis: 100%;
+        margin: 8px 0;
+        max-width: 100%;
+    }
+    
+    .spacer {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        gap: 8px;
+    }
+    
+    .navbar-brand {
+        .brand-text {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .navbar-actions {
+        gap: 8px;
+        
+        button {
+            padding: 0 12px;
+            height: 36px;
+            font-size: 13px;
+            
+            .btn-text {
+                display: none;
+            }
+            
+            mat-icon {
+                margin: 0;
+            }
+        }
+    }
+    
+    .navbar-search {
+        .search-input {
+            font-size: 13px;
+        }
+    }
+}

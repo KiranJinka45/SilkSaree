@@ -1,0 +1,55 @@
+/* Global Styles for Royal Silk Theme */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+    --primary-color: #5D1049;
+    /* Deep Royal Purple/Maroon */
+    --accent-color: #D4AF37;
+    /* Gold */
+    --bg-color: #FDFAF5;
+    /* Cream */
+    --text-color: #333333;
+    --header-font: 'Playfair Display', serif;
+    --body-font: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Button Overrides */
+button.mat-mdc-raised-button.mat-primary {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    font-family: var(--body-font);
+}
+
+button.mat-mdc-raised-button.mat-warn {
+    background-color: #b71c1c !important;
+}
+
+/* Card Styling */
+mat-card {
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}

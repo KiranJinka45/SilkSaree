@@ -1,0 +1,15 @@
+# Backend
+backend/target/
+backend/*.log
+backend/.mvn/
+backend/.idea/
+backend/*.iml
+backend/help.md
+
+# Frontend
+frontend/node_modules/
+frontend/.angular/
+frontend/*.log
+frontend/dist/
+frontend/.vscode/
+frontend/.editorconfig
